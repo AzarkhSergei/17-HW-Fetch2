@@ -17,7 +17,7 @@ fetch(`${base_url}currencies`, {
     select1.value = "USD";
     select2.value = "RUB";
   })
-  .then((something) => {
+  .then(() => {
     btnConvert.onclick = function () {
       const from = select1.value.trim();
       const to = select2.value.trim();
@@ -46,4 +46,6 @@ fetch(`${base_url}currencies`, {
         })
     };
   })
-  .catch(e => console.log("Error:",e))
+  .catch(e => {
+    console.error('Error:', e);
+  });
